@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TechMart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar">
+            <div class="logo">TechMart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-register">Sign Up</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="form-container" style="max-width: 600px;">
+                <h1 class="section-title">Create Your Account</h1>
+                <p style="text-align: center; color: #7f8c8d; margin-bottom: 2rem;">Join thousands of happy customers at TechMart</p>
+                
+                <form onsubmit="return registerUser()">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="reg-name">Full Name *</label>
+                        <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="reg-email">Email Address *</label>
+                        <input type="email" id="reg-email" placeholder="Enter your email" required>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number (Optional)</label>
+                        <input type="tel" id="reg-phone" placeholder="Enter 10-digit phone number">
+                        <span class="form-error"></span>
+                        <small style="color: #7f8c8d; display: block; margin-top: 0.3rem;">Format: XXXXXXXXXX (10 digits)</small>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="reg-password">Password *</label>
+                        <input type="password" id="reg-password" placeholder="Enter a strong password (min 6 characters)" required>
+                        <span class="form-error"></span>
+                        <small style="color: #7f8c8d; display: block; margin-top: 0.3rem;">Minimum 6 characters required</small>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="reg-confirm-password">Confirm Password *</label>
+                        <input type="password" id="reg-confirm-password" placeholder="Re-enter your password" required>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="agree-terms" required>
+                        <label for="agree-terms" style="margin: 0;">I agree to the <a href="#" style="color: var(--primary-color); text-decoration: underline;">Terms & Conditions</a> and <a href="#" style="color: var(--primary-color); text-decoration: underline;">Privacy Policy</a></label>
+                        <span class="form-error"></span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="form-submit">Create Account</button>
+
+                    <!-- Login Link -->
+                    <div class="form-link">
+                        Already have an account? <a href="login.html">Login here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About TechMart</h4>
+                <p>Your one-stop shop for all tech gadgets and accessories. Quality products at competitive prices.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
