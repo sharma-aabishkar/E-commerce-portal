@@ -261,6 +261,51 @@ function registerUser() {
   return false;
 }
 
+// Live validation helpers for registration fields
+function validateRegistrationField(id) {
+  const value = document.getElementById(id)?.value || '';
+  switch(id) {
+    case 'reg-name':
+      if (isEmpty(value)) return 'Full name is required';
+      return '';
+    case 'reg-email':
+      if (isEmpty(value)) return 'Email is required';
+      if (!isValidEmail(value)) return 'Please enter a valid email';
+      return '';
+    case 'reg-phone':
+      if (!isEmpty(value) && !isValidPhone(value)) return 'Please enter a valid 10-digit phone number';
+      return '';
+    case 'reg-password':
+      if (isEmpty(value)) return 'Password is required';
+      if (!isValidPassword(value)) return 'Password must be at least 6 characters';
+      return '';
+    case 'reg-confirm-password':
+      const pw = document.getElementById('reg-password')?.value || '';
+      if (isEmpty(value)) return 'Please confirm your password';
+      if (pw !== value) return 'Passwords do not match';
+      return '';
+    default:
+      return '';
+  }
+}
+
+// Attach live validation to registration inputs
+function attachRegistrationLiveValidation() {
+  const fields = ['reg-name','reg-email','reg-phone','reg-password','reg-confirm-password'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      const msg = validateRegistrationField(id);
+      if (msg) {
+        showFieldError(id, msg);
+      } else {
+        clearFieldError(id);
+      }
+    });
+  });
+}
+
 // Login user
 function loginUser() {
   const email = document.getElementById('login-email')?.value;
@@ -603,6 +648,11 @@ document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
   }
 
+  // Attach live validation on registration page
+  if (document.getElementById('reg-email')) {
+    attachRegistrationLiveValidation();
+  }
+
   // Add real-time validation to forms
   document.querySelectorAll('input, textarea').forEach(field => {
     field.addEventListener('blur', function() {
@@ -620,6 +670,18 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       navLinks?.classList.toggle('active');
     });
+    // allow keyboard toggle
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') navLinks?.classList.toggle('active');
+    });
+  }
+});
+
+// Update nav counters whenever storage changes (useful when user opens multiple tabs)
+window.addEventListener('storage', (e) => {
+  if (e.key === 'wishlist' || e.key === 'cart') {
+    updateWishlistCount();
+    updateCartCount();
   }
 });
 

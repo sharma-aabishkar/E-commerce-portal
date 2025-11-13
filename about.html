@@ -17,14 +17,22 @@
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
             </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-register">Sign Up</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <div class="nav-icons">
+                    <a href="wishlist.html" class="icon-btn" title="Wishlist">🤍 <span class="count-badge wishlist-count">0</span></a>
+                    <button class="icon-btn" title="Cart">🛒 <span class="count-badge cart-count">0</span></button>
+                </div>
+
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="register.html" class="btn-register">Sign Up</a>
+                </div>
+
+                <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>

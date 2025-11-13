@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wishlist - TechMart</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="logo">TechMart</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div style="display:flex; gap:1rem; align-items:center;">
+          <div class="nav-icons">
+            <a href="wishlist.html" class="icon-btn" title="Wishlist">🤍 <span class="count-badge wishlist-count">0</span></a>
+            <button class="icon-btn" title="Cart">🛒 <span class="count-badge cart-count">0</span></button>
+          </div>
+          <div class="auth-buttons">
+            <a href="login.html" class="btn-login">Login</a>
+            <a href="register.html" class="btn-register">Sign Up</a>
+          </div>
+          <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container wishlist-container">
+        <h1 class="section-title">Your Wishlist</h1>
+        <div id="wishlist-list">
+          <p class="wishlist-empty">Loading wishlist...</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About TechMart</h4>
+          <p>Your one-stop shop for all tech gadgets and accessories. Quality products at competitive prices.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 TechMart. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Render wishlist items on this page
+      function renderWishlistPage() {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+        const container = document.getElementById('wishlist-list');
+        if (!container) return;
+        if (wishlist.length === 0) {
+          container.innerHTML = '<p class="wishlist-empty">Your wishlist is empty. Browse products and add favorites!</p>';
+          return;
+        }
+
+        container.innerHTML = wishlist.map(item => `
+          <div class="wishlist-item">
+            <div class="product-image" style="width:84px; height:84px; display:flex; align-items:center; justify-content:center; font-size:2rem; background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%); border-radius:6px">${['📱','⌚','🔌','🔋','🖱️','⌨️','📱','📱'][item.id - 1]}</div>
+            <div class="wi-info">
+              <div style="font-weight:700;">${item.name}</div>
+              <div style="color:#7f8c8d; margin-top:0.25rem;">${item.description || ''}</div>
+              <div style="margin-top:0.5rem; font-weight:700; color:var(--primary-color);">₹${item.price.toLocaleString('en-IN')}</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:0.5rem; align-items:flex-end">
+              <button onclick="addToCart(${item.id})" class="btn-cart">Add to Cart</button>
+              <button onclick="removeFromWishlist(${item.id})" class="btn-wishlist">Remove</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function removeFromWishlist(productId) {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+        const idx = wishlist.findIndex(i => i.id === productId);
+        if (idx > -1) {
+          wishlist.splice(idx, 1);
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+          updateWishlistCount();
+          renderWishlistPage();
+          showAlert('Item removed from wishlist', 'success');
+        }
+      }
+
+      window.addEventListener('load', () => {
+        renderWishlistPage();
+      });
+    </script>
+  </body>
+</html>
