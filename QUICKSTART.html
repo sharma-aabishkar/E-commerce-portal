@@ -1,0 +1,398 @@
+<!-- Quick Start Guide - Open this in your browser as a visual reference -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart - Quick Start Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #2c3e50;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #004e89 0%, #1ac8eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #004e89;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        h3 {
+            color: #ff6b35;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        ul, ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .quick-links a {
+            display: block;
+            padding: 1rem;
+            background: #f8f9fa;
+            border: 2px solid #ff6b35;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ff6b35;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .quick-links a:hover {
+            background: #ff6b35;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+        .feature-card h4 {
+            color: #004e89;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛍️ TechMart E-Commerce</h1>
+            <p>Quick Start Guide & Project Overview</p>
+        </header>
+
+        <div class="content">
+            <!-- Quick Access -->
+            <section>
+                <h2>🚀 Quick Access</h2>
+                <p>Click any link below to navigate to the main pages:</p>
+                <div class="quick-links">
+                    <a href="index.html">🏠 Home</a>
+                    <a href="products.html">📦 Products</a>
+                    <a href="register.html">📝 Register</a>
+                    <a href="login.html">🔐 Login</a>
+                    <a href="contact.html">📞 Contact</a>
+                    <a href="about.html">ℹ️ About Us</a>
+                </div>
+            </section>
+
+            <!-- How to Use -->
+            <section>
+                <h2>📖 How to Use</h2>
+                
+                <h3>1. First Time Users</h3>
+                <ol>
+                    <li>Click <strong>"Sign Up"</strong> button in top navigation</li>
+                    <li>Fill in your details (name, email, phone, password)</li>
+                    <li>Accept terms & conditions</li>
+                    <li>Click <strong>"Create Account"</strong></li>
+                    <li>You'll be redirected to login page</li>
+                </ol>
+
+                <h3>2. Login</h3>
+                <ol>
+                    <li>Click <strong>"Login"</strong> button</li>
+                    <li>Enter your registered email and password</li>
+                    <li>Click <strong>"Login"</strong> button</li>
+                    <li>You're now logged in!</li>
+                </ol>
+
+                <h3>3. Shopping</h3>
+                <ol>
+                    <li>Go to <strong>Products</strong> page</li>
+                    <li>Browse all available products</li>
+                    <li>Click <strong>"Add to Cart"</strong> to purchase</li>
+                    <li>Click <strong>"Add to Wishlist"</strong> to save for later</li>
+                    <li>Use filters and sort options to find products</li>
+                </ol>
+
+                <h3>4. Reviews</h3>
+                <ol>
+                    <li>Go to <strong>Products</strong> page</li>
+                    <li>Scroll to <strong>"Customer Reviews"</strong> section</li>
+                    <li>Select a product from dropdown</li>
+                    <li>Choose a star rating</li>
+                    <li>Write your review (minimum 10 characters)</li>
+                    <li>Click <strong>"Submit Review"</strong></li>
+                </ol>
+
+                <h3>5. Contact Us</h3>
+                <ol>
+                    <li>Click <strong>"Contact Us"</strong> in navigation</li>
+                    <li>Fill in your name, email, subject, and message</li>
+                    <li>Click <strong>"Send Message"</strong></li>
+                    <li>View FAQs for quick answers</li>
+                </ol>
+            </section>
+
+            <!-- Features -->
+            <section>
+                <h2>✨ Features Implemented</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>🔐 User Authentication</h4>
+                        <p>Register, login, logout with secure password storage</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📦 Shopping Cart</h4>
+                        <p>Add/remove items from cart with quantity management</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>❤️ Wishlist</h4>
+                        <p>Save favorite products for later purchase</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>⭐ Reviews & Ratings</h4>
+                        <p>Submit and view customer reviews with ratings</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔍 Search & Filter</h4>
+                        <p>Filter by category and sort by price/rating</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📱 Responsive Design</h4>
+                        <p>Works perfectly on desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>✅ Form Validation</h4>
+                        <p>Email, password, phone number validation</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>💾 Local Storage</h4>
+                        <p>Data persists across browser sessions</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Data -->
+            <section>
+                <h2>📋 Sample Products</h2>
+                <p>The system comes pre-loaded with 8 sample tech products:</p>
+                <ul>
+                    <li><strong>Wireless Headphones</strong> - ₹2,999</li>
+                    <li><strong>Smartwatch</strong> - ₹4,999</li>
+                    <li><strong>USB-C Cable</strong> - ₹499</li>
+                    <li><strong>Portable Charger</strong> - ₹1,999</li>
+                    <li><strong>Wireless Mouse</strong> - ₹999</li>
+                    <li><strong>Mechanical Keyboard</strong> - ₹3,499</li>
+                    <li><strong>Phone Stand</strong> - ₹299</li>
+                    <li><strong>Screen Protector</strong> - ₹199</li>
+                </ul>
+            </section>
+
+            <!-- Form Validation -->
+            <section>
+                <h2>🔍 Form Validation Rules</h2>
+                <h3>Registration/Login:</h3>
+                <ul>
+                    <li>Email must be valid format (example@domain.com)</li>
+                    <li>Password must be at least 6 characters</li>
+                    <li>Passwords must match in registration</li>
+                    <li>Phone number must be 10 digits</li>
+                    <li>All required fields must be filled</li>
+                </ul>
+                <h3>Contact Form:</h3>
+                <ul>
+                    <li>Name cannot be empty</li>
+                    <li>Email must be valid</li>
+                    <li>Subject cannot be empty</li>
+                    <li>Message must be at least 10 characters</li>
+                </ul>
+                <h3>Review Form:</h3>
+                <ul>
+                    <li>Product must be selected</li>
+                    <li>Rating must be selected (1-5 stars)</li>
+                    <li>Review must be at least 10 characters</li>
+                </ul>
+            </section>
+
+            <!-- Alerts -->
+            <div class="alert success">
+                <strong>✅ All features are fully functional!</strong> The application uses browser's local storage to persist data, so your registered accounts and reviews will be saved even after closing the browser.
+            </div>
+
+            <div class="alert">
+                <strong>⚠️ Important:</strong> This is a frontend-only application. Data is stored locally in your browser. For production use, integrate with a backend server and database.
+            </div>
+
+            <!-- File Structure -->
+            <section>
+                <h2>📁 File Structure</h2>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+E-commerce-portal/
+├── index.html              # Home page
+├── products.html           # Product listing & reviews
+├── register.html           # Registration page
+├── login.html              # Login page
+├── contact.html            # Contact & FAQ
+├── about.html              # About company
+├── style.css               # Main stylesheet
+├── script.js               # JavaScript logic
+└── README.md               # Full documentation
+                </pre>
+            </section>
+
+            <!-- Customization -->
+            <section>
+                <h2>🎨 Customization Tips</h2>
+                <h3>Change Colors:</h3>
+                <p>Edit the CSS variables at the top of <code>style.css</code>:</p>
+                <ul>
+                    <li><code>--primary-color: #ff6b35;</code> (Orange)</li>
+                    <li><code>--secondary-color: #004e89;</code> (Dark Blue)</li>
+                    <li><code>--accent-color: #1ac8eb;</code> (Cyan)</li>
+                </ul>
+
+                <h3>Add More Products:</h3>
+                <p>Edit the <code>sampleProducts</code> array in <code>script.js</code> and add new product objects with id, name, price, description, category, and rating.</p>
+
+                <h3>Change Store Name:</h3>
+                <p>Search for "TechMart" and replace with your store name in all HTML files.</p>
+            </section>
+
+            <!-- Keyboard Shortcuts -->
+            <section>
+                <h2>⌨️ Browser Tips</h2>
+                <ul>
+                    <li><strong>F12:</strong> Open Developer Tools to inspect code</li>
+                    <li><strong>Ctrl+Shift+I:</strong> Open Inspector (Firefox)</li>
+                    <li><strong>Cmd+Option+I:</strong> Open Inspector (Mac)</li>
+                    <li><strong>Application Tab:</strong> View Local Storage data</li>
+                </ul>
+            </section>
+
+            <!-- Support -->
+            <section>
+                <h2>❓ Troubleshooting</h2>
+                <h3>Not seeing changes?</h3>
+                <ul>
+                    <li>Clear browser cache (Ctrl+Shift+Delete)</li>
+                    <li>Hard refresh (Ctrl+F5)</li>
+                    <li>Close and reopen browser</li>
+                </ul>
+                <h3>Local Storage not working?</h3>
+                <ul>
+                    <li>Check if browser allows local storage (settings/privacy)</li>
+                    <li>Not supported in private/incognito mode</li>
+                    <li>Try a different browser</li>
+                </ul>
+                <h3>Form validation not working?</h3>
+                <ul>
+                    <li>Open browser console (F12) to check for errors</li>
+                    <li>Ensure JavaScript is enabled</li>
+                    <li>Check browser compatibility</li>
+                </ul>
+            </section>
+
+            <!-- Next Steps -->
+            <section>
+                <h2>🚀 Next Steps</h2>
+                <ol>
+                    <li>Register a new account</li>
+                    <li>Explore all pages and features</li>
+                    <li>Add products to cart and wishlist</li>
+                    <li>Submit a review</li>
+                    <li>Try form validation (enter invalid data)</li>
+                    <li>Test on mobile devices</li>
+                    <li>Read the full README.md for documentation</li>
+                    <li>Customize colors and content</li>
+                    <li>Deploy to a web hosting service</li>
+                </ol>
+            </section>
+
+        </div>
+
+        <footer>
+            <p>TechMart E-Commerce Platform | College Assignment Project | © 2024</p>
+            <p>Built with HTML5, CSS3, and JavaScript</p>
+        </footer>
+    </div>
+</body>
+</html>
